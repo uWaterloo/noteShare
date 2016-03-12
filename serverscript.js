@@ -1,9 +1,21 @@
 // Retreive data from the database
-function getData(coursename) {
+function getData() {
     //var select ='SELECT * FROM notes ';
     //var courseName = coursename.concat(' ');
     //var ordering = 'ORDER BY rating DESC';
     var queryResult = db.Execute('SELECT * FROM notes ORDER BY rating DESC');
+    var rows = JSON.parse(queryResult);
+    if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
+        return '{"status":"noTable"}';
+    }
+    return queryResult;
+}
+
+function getDataCourse(coursename) {
+    //var select ='SELECT * FROM notes Where courseName =';
+    //var courseName = coursename.concat(' ');
+    //var ordering = 'ORDER BY rating DESC';
+    var queryResult = db.Execute('SELECT * FROM notes WHERE courseName='+coursename+' ORDER BY rating DESC');
     var rows = JSON.parse(queryResult);
     if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
         return '{"status":"noTable"}';
