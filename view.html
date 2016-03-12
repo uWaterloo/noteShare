@@ -17,13 +17,14 @@ function launchOneDriveSaver(){
                 </button>
             </widget-cell>
         </widget-row>
-        <widget-row>
+        <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
                     <button class="btn btn-default" ng-click="showCourseNotes('CS241')">
-                        Load Sample Course Notes
+                        {{ item.subject_code }} {{ item.catalog }}
                     </button>
                 </widget-cell>
         </widget-row>
+        
 </script>
 
 <!-- Preview View --> 
