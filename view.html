@@ -6,20 +6,20 @@ function launchOneDriveSaver(){
 </script>
 <script type="text/ng-template" id="main.html"> 
         <widget-row>
-            <widget-cell>
-                <h2>Main Page</h2>
+            <widget-cell class="main">
+                <h2 class="main">Main Page</h2>
             </widget-cell>
         </widget-row>
     	<widget-row>
             <widget-cell>
-                <button class="btn btn-default" ng-click="showPreview()">
+                <button class="btn" ng-click="showPreview()">
                     Load Preview
                 </button>
             </widget-cell>
         </widget-row>
         <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
-                    <button class="btn btn-default" ng-click="showCourseNotes(item.subject_code, item.catalog)">
+                    <button class="btn" ng-click="showCourseNotes(item.subject_code, item.catalog)">
                         {{ item.subject_code }} {{ item.catalog }}
                     </button>
                 </widget-cell>
@@ -30,7 +30,7 @@ function launchOneDriveSaver(){
 <!-- Preview View --> 
 <script type="text/ng-template" id="preview.html">
     <widget-row>
-        <widget-cell>
+        <widget-cell class="btn">
             <h2> Preview Page </h2>
         </widget-cell>
     </widget-row>
