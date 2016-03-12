@@ -12,13 +12,24 @@
 }
 
 
-.btne{
-    position: relative;
-	padding: 20px 60px solid blue;
-    margin: 10px 15px 15px 0px;
-    float: left;
-	border-radius: 79px;
-	font-family: sans-serif;
-    font-color: black;
-    background-color: yellow;
+.btneee{
+  padding: 5px 5px;
+  font-size: 15px;
+  text-decoration: bold;
+  margin: 2px;
+  color: black;
+  background-color:yellow;
+  
+  font-weight: bold;
+  
+    
 }
+
+
+.table{
+    padding: 20px 20px solid yellow;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 20px 5px;
+}
+    
