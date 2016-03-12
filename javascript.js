@@ -10,7 +10,7 @@ angular.module('portalApp')
     };
 
     // Import variables and functions from service
-    $scope.data = noteShareFactory.data;
+    $scope.dbdata = noteShareFactory.data;
 
     // initialize the service
     noteShareFactory.init($scope);
@@ -44,9 +44,19 @@ angular.module('portalApp')
 		initialized.value = true;
 
 		// Place your init code here:
-		data.value={message:"Welcome to Portal SDK!"};
+		$scope.portalHelpers.invokeServerFunction('getData')
+            .then(function(results){
+            data.value = results   
+            sourceLoaded();          
+        });
+		
 	}
-
+    
+    function sourceLoaded() {
+            sourcesLoaded++;
+            if (sourcesLoaded > 0)
+                loading.value = false;
+        }
 
 	// Expose init(), and variables
 	return {
