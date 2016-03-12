@@ -36,9 +36,12 @@ angular.module('portalApp')
          var courseName = subject_code + catalog;
          console.log(courseName);
          $scope.item.courseName = courseName;
-         //dbdata.filter(function(el){
-           //  return el.coureName = courseName;});
-        $scope.portalHelpers.showView('notes.html', 1);
+         $scope.portalHelpers.showView('notes.html', 1);
+         $scope.portalHelpers.invokeServerFunction('getDataCourse', courseName)
+             .then(function(results){
+              $scope.dbdata.value = results});
+         console.log('Right here');
+         console.log($scope.dbdata);
     }
 	
      $scope.portalHelpers.getApiData('student/courses').then(function(result) {
