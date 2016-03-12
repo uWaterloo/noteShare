@@ -34,8 +34,17 @@ angular.module('portalApp')
 		initialized.value = true;
 
 		// Place your init code here:
-		data.value={message:"Welcome to Portal SDK!"};
+		$scope.portalHelpers.invokeServerFunction('getData').then(function (result) {
+                dbData.value = result;
+                sourceLoaded();
+            });
 	}
+    
+    function sourceLoaded() {
+            sourcesLoaded++;
+            if (sourcesLoaded > 0)
+                loading.value = false;
+        }
 
 
 	// Expose init(), and variables
