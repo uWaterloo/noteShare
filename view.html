@@ -8,25 +8,48 @@ function launchOneDriveSaver(){
         <widget-row>
             <widget-cell>
                 <h2>Main Page</h2>
+            </widget-cell>
+        </widget-row>
+    	<widget-row>
+            <widget-cell>
                 <button class="btn btn-default" ng-click="showPreview()">
                     Load Preview
                 </button>
             </widget-cell>
         </widget-row>
+        <widget-row>
+                <widget-cell>
+                    <button class="btn btn-default" ng-click="showCourseNotes('CS241')">
+                        Load Sample Course Notes
+                    </button>
+                </widget-cell>
+        </widget-row>
 </script>
 
-<!-- Second View --> 
+<!-- Preview View --> 
 <script type="text/ng-template" id="preview.html">
     <widget-row>
         <widget-cell>
             <h2> Preview Page </h2>
         </widget-cell>
     </widget-row>
-    <a href="#" type="button" class="btn" onclick="launchOneDriveSaver()">Upload File</a>
-    <a href="#" type="button" class="btn" onclick="function()">Download File</a>
-	<input id="fileToUpload" name="fileToUpload" type="file" />
+    <widget-row>
+        <widget-cell>
+            <a href="#" type="button" class="btn" onclick="launchOneDriveSaver()">Upload File</a>
+            <a href="#" type="button" class="btn" onclick="function()">Download File</a>
+            <input id="fileToUpload" name="fileToUpload" type="file" />
+        </widget-cell>
+    </widget-row>
 </script>
         
+<!-- Notes View -->
+<script type="text/ng-template" id="notes.html">
+     <widget-row>
+        <widget-cell>
+            <h2> CS 241 - Notes Page </h2>
+        </widget-cell>
+    </widget-row>
+</script>
 
 <!-- Menu template -->
 <script type="text/ng-template" id="widgetMenu.html">
