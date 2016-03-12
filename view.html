@@ -1,9 +1,3 @@
-<script type="text/javascript" src="https://js.live.net/v6.0/OneDrive.js" id="onedrive-js" client-id="APP_ID">
-function launchOneDriveSaver(){
-    var saverOptions = { file: "fileToUpload" /* ... */ };
-    OneDrive.save(saverOptions);
-  }
-</script>
 <script type="text/ng-template" id="main.html"> 
         <widget-row>
             <widget-cell class="main">
@@ -47,7 +41,7 @@ function launchOneDriveSaver(){
 <script type="text/ng-template" id="notes.html">
      <widget-row>
         <widget-cell>
-            <h2> CS 241 - Notes Page </h2>
+            <h2> {{ item.courseName }} - Notes Page </h2>
         </widget-cell>
     </widget-row>
     <div class="container">
@@ -68,8 +62,8 @@ function launchOneDriveSaver(){
                     <tr ng-repeat="item in dbdata.value">
                         <td> {{item.name}}</td>
                         <td>{{item.rating}}</td>   
-                        <td>{{item.dateTaken}}</td>
-                        <td>{{item.dateUploaded}}</td>
+                        <td>{{item.dateTaken  | momentDate : "MMM Do YY"}}</td>
+                        <td>{{item.dateUploaded  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.courseName}}</td>
                         <td>{{item.uploader}}</td>
                         <td>{{item.fileType}}</td>
