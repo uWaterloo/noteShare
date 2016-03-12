@@ -19,6 +19,13 @@ angular.module('portalApp')
 	// Show main view in the first column
 	$scope.portalHelpers.showView('main.html', 1);
     
+    $scope.countz = function (rating, id) {
+       console.log("Rating " + rating);
+       rating += 1;
+        document.getElementById("likes").innerHTML= rating;
+       //db.Execute('UPDATE notes SET rating = ' + rating + 'WHERE id = ' + id);
+   }
+    
     // Show preview view   
     $scope.showPreview = function () {
         $scope.portalHelpers.showView('preview.html', 1);
