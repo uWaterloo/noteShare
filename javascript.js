@@ -34,10 +34,12 @@ angular.module('portalApp')
 		initialized.value = true;
 
 		// Place your init code here:
-		$scope.portalHelpers.invokeServerFunction('getData').then(function (result) {
-                dbData.value = result;
-                sourceLoaded();
-            });
+		$scope.portalHelpers.invokeServerFunction('getData')
+            .then(function(results){
+            data = results   
+            sourceLoaded();          
+        });
+		
 	}
     
     function sourceLoaded() {
@@ -45,7 +47,6 @@ angular.module('portalApp')
             if (sourcesLoaded > 0)
                 loading.value = false;
         }
-
 
 	// Expose init(), and variables
 	return {
