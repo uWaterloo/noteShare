@@ -17,6 +17,11 @@ angular.module('portalApp')
 
 	// Show main view in the first column
 	$scope.portalHelpers.showView('main.html', 1);
+    
+    // Show preview view   
+    $scope.showPreview = function () {
+        $scope.portalHelpers.showView('preview.html', 1);
+    }
 	
 }])
 // Factory maintains the state of the widget
