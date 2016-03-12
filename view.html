@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="main.html"> 
         <widget-row>
             <widget-cell class="main">
-                <h2 class="main">Main Page</h2>
+                
             </widget-cell>
         </widget-row>
     	<widget-row>
@@ -30,9 +30,9 @@
     </widget-row>
     <widget-row>
         <widget-cell>
+            <input id="fileToUpload" name="fileToUpload" type="file" />
             <a href="#" type="button" class="btn" onclick="launchOneDriveSaver()">Upload File</a>
             <a href="#" type="button" class="btn" onclick="function()">Download File</a>
-            <input id="fileToUpload" name="fileToUpload" type="file" />
         </widget-cell>
     </widget-row>
 </script>
@@ -61,7 +61,7 @@
                 <tbody>
                     <tr ng-repeat="item in dbdata.value">
                         <td> {{item.name}}</td>
-                        <td>{{item.rating}}</td>   
+                        <td id = "likes"> {{item.rating}} <button id="btnlike" ng-click="countz(item.rating, item.id)"> Like </button></td>   
                         <td>{{item.dateTaken  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.dateUploaded  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.courseName}}</td>
