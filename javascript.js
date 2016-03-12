@@ -33,7 +33,7 @@ angular.module('portalApp')
     }
 	
      $scope.portalHelpers.getApiData('student/courses').then(function(result) {
-         $scope.userCourses = result.data.terms[7].courses;
+         $scope.userCourses = result.data.terms[6].courses;
      	console.log(result);
      });
 }])
