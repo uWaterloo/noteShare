@@ -2,13 +2,15 @@
   border-radius: 70px;
   padding: 50px 40px;
   font-size: 100px;
-  text-decoration: none;
+  text-decoration: bold;
   margin: 20px;
-  color: white;
-  background-color:green;
+  color: black;
+  background-color:yellow;
+  box-shadow: 2px 2px 4px 4px;
+  font-weight: bold;
   
 }
-}
+
 
 .btne{
     position: relative;
