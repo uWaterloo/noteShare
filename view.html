@@ -67,7 +67,19 @@ function launchOneDriveSaver(){
                 <tbody>
                     <tr ng-repeat="item in dbdata.value">
                         <td> {{item.name}}</td>
-                        <td>{{item.rating}}</td>
+                        <td>{{item.rating}}
+                            <script type="text/javascript">
+  							var likes = 0;
+  							function count() {
+      							likes += 1;
+      							document.getElementById("likes").innerHTML=likes;
+      							var x = document.getElementById("btnlike");
+      							x.disabled = true;
+  								};
+  							</script>
+  							<button id="btnlike" type="button" onclick="count()">Like</button>
+ 	 						<p>Clicks: <a id="likes">0</a></p></td>
+                        
                         <td>{{item.dateTaken}}</td>
                         <td>{{item.dateUploaded}}</td>
                         <td>{{item.courseName}}</td>
@@ -89,8 +101,5 @@ function launchOneDriveSaver(){
     </li>
 </script>
 
-<!-- Like Button Begin -->
-<span class="likebtn-wrapper" data-theme="google" data-identifier="likebtn" data-show_like_label="false" data-dislike_enabled="false" data-share_enabled="false"></span>
-<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
-<!-- Like Button End -->
+
 
