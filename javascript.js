@@ -10,7 +10,7 @@ angular.module('portalApp')
     };
 
     // Import variables and functions from service
-    $scope.data = noteShareFactory.data;
+    $scope.Dbdata = noteShareFactory.data;
 
     // initialize the service
     noteShareFactory.init($scope);
