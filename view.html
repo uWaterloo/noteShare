@@ -42,7 +42,7 @@
                 <tbody>
                     <tr ng-repeat="item in dbdata.value">
                         <td> {{item.name}}</td>
-                        <td id = "likes"> {{item.rating}} <button id="btnlike" ng-click="countz(item.rating, item.id)"> Like </button></td>   
+                        <td id = "likes"> {{item.rating}} <button class="btn" ng-click="countz(item.rating, item.id)"> Like </button></td>   
                         <td>{{item.dateTaken  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.dateUploaded  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.courseName}}</td>
