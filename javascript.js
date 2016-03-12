@@ -11,7 +11,8 @@ angular.module('portalApp')
 
     // Import variables and functions from service
     $scope.dbdata = noteShareFactory.data;
-	$scope.item = {value}
+    $scope.item = {dbdata: $scope.dbdata };
+    
     // initialize the service
     noteShareFactory.init($scope);
 
