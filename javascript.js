@@ -28,6 +28,10 @@ angular.module('portalApp')
         $scope.portalHelpers.showView('notes.html', 1);
     }
 	
+     $scope.portalHelpers.getApiData('student/courses').then(function(result) {
+         $scope.userCourses = result.data.terms[7].courses;
+     	console.log(result);
+     });
 }])
 // Factory maintains the state of the widget
 .factory('noteShareFactory', ['$http', '$rootScope', '$filter', '$q', function ($http, $rootScope, $filter, $q) {
