@@ -11,7 +11,8 @@ angular.module('portalApp')
 
     // Import variables and functions from service
     $scope.dbdata = noteShareFactory.data;
-
+    $scope.item = {dbdata: $scope.dbdata };
+    
     // initialize the service
     noteShareFactory.init($scope);
 
@@ -24,7 +25,9 @@ angular.module('portalApp')
     }
     
     // Show course notes view
-     $scope.showCourseNotes = function (course) {
+     $scope.showCourseNotes = function (subject_code, catalog) {
+         var courseName = subject_code + catalog;
+         console.log(courseName);
         $scope.portalHelpers.showView('notes.html', 1);
     }
 	
