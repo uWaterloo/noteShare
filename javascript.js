@@ -22,6 +22,11 @@ angular.module('portalApp')
     $scope.showPreview = function () {
         $scope.portalHelpers.showView('preview.html', 1);
     }
+    
+    // Show course notes view
+     $scope.showCourseNotes = function (course) {
+        $scope.portalHelpers.showView('notes.html', 1);
+    }
 	
 }])
 // Factory maintains the state of the widget
