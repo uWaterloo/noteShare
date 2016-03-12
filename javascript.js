@@ -10,7 +10,7 @@ angular.module('portalApp')
     };
 
     // Import variables and functions from service
-    $scope.Dbdata = noteShareFactory.data;
+    $scope.dbdata = noteShareFactory.data;
 
     // initialize the service
     noteShareFactory.init($scope);
@@ -46,7 +46,7 @@ angular.module('portalApp')
 		// Place your init code here:
 		$scope.portalHelpers.invokeServerFunction('getData')
             .then(function(results){
-            data = results   
+            data.value = results   
             sourceLoaded();          
         });
 		
