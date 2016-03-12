@@ -1,0 +1,33 @@
+.btn{
+  border-radius: 70px;
+  padding: 50px 40px;
+  font-size: 100px;
+  text-decoration: bold;
+  margin: 20px;
+  color: black;
+  background-color:yellow;
+  box-shadow: 2px 2px 4px 4px;
+  font-weight: bold;
+  
+}
+
+
+.btne{
+    position: relative;
+	padding: 20px 60px solid blue;
+    margin: 10px 15px 15px 0px;
+    float: left;
+	border-radius: 79px;
+	font-family: sans-serif;
+    font-color: black;
+    background-color: yellow;
+}
+
+
+.table{
+    padding: 20px 20px solid yellow;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 20px 5px;
+}
+    

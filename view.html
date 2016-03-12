@@ -1,19 +1,19 @@
 <script type="text/ng-template" id="main.html"> 
         <widget-row>
-            <widget-cell>
-                <h2>Main Page</h2>
+            <widget-cell class="main">
+                
             </widget-cell>
         </widget-row>
     	<widget-row>
             <widget-cell>
-                <button class="btn btn-default" ng-click="showPreview()">
+                <button class="btn" ng-click="showPreview()">
                     Load Preview
                 </button>
             </widget-cell>
         </widget-row>
         <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
-                    <button class="btn btn-default" ng-click="showCourseNotes(item.subject_code, item.catalog)">
+                    <button class="btn" ng-click="showCourseNotes(item.subject_code, item.catalog)">
                         {{ item.subject_code }} {{ item.catalog }}
                     </button>
                 </widget-cell>
@@ -30,9 +30,9 @@
     </widget-row>
     <widget-row>
         <widget-cell>
+            <input id="fileToUpload" name="fileToUpload" type="file" />
             <a href="#" type="button" class="btn" onclick="launchOneDriveSaver()">Upload File</a>
             <a href="#" type="button" class="btn" onclick="function()">Download File</a>
-            <input id="fileToUpload" name="fileToUpload" type="file" />
         </widget-cell>
     </widget-row>
 </script>
@@ -61,9 +61,9 @@
                 <tbody>
                     <tr ng-repeat="item in dbdata.value">
                         <td> {{item.name}}</td>
-                        <td>{{item.rating}}</td>   
-                        <td>{{item.dateTaken}}</td>
-                        <td>{{item.dateUploaded}}</td>
+                        <td id = "likes"> {{item.rating}} <button id="btnlike" ng-click="countz(item.rating, item.id)"> Like </button></td>   
+                        <td>{{item.dateTaken  | momentDate : "MMM Do YY"}}</td>
+                        <td>{{item.dateUploaded  | momentDate : "MMM Do YY"}}</td>
                         <td>{{item.courseName}}</td>
                         <td>{{item.uploader}}</td>
                         <td>{{item.fileType}}</td>
