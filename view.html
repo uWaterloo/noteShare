@@ -17,13 +17,14 @@ function launchOneDriveSaver(){
                 </button>
             </widget-cell>
         </widget-row>
-        <widget-row>
+        <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
                     <button class="btn btn-default" ng-click="showCourseNotes('CS241')">
-                        Load Sample Course Notes
+                        {{ item.subject_code }} {{ item.catalog }}
                     </button>
                 </widget-cell>
         </widget-row>
+        
 </script>
 
 <!-- Preview View --> 
@@ -50,48 +51,32 @@ function launchOneDriveSaver(){
         </widget-cell>
     </widget-row>
     <div class="container">
-  	<table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Rating</th>
-        <th>Date Taken</th>
-        <th>Date Uploaded</th>
-        <th>Course Name</th>
-        <th>Uploader </th>
-        <th>File Type </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Lecture 15</td>
-        <td>15</td>
-        <td>January 12, 2016</td>
-        <td>January 17, 2016</td>
-        <td>CS 241</td>
-        <td>Pakalo Papito</td>
-        <td>PDF</td>
-      </tr>
-      <tr>
-        <td>Lecture 11</td>
-        <td>5</td>
-        <td>January 2, 2016</td>
-        <td>January 17, 2016</td>
-        <td>PHYS 122 </td>
-        <td>Nicolas Geisbacher</td>
-        <td>PNG</td>
-      </tr>
-	  <tr>
-        <td>Lecture 25</td>
-        <td>152</td>
-        <td>March 12, 2016</td>
-        <td>March 17, 2016</td>
-        <td>CS 349</td>
-        <td>Athina Vandame</td>
-        <td>JPG</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="table-reponsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Rating</th>
+                        <th>Date Taken</th>
+                        <th>Date Uploaded</th>
+                        <th>Course Name</th>
+                        <th>Uploader </th>
+                        <th>File Type </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in dbdata.value">
+                        <td> {{item.name}}</td>
+                        <td>{{item.rating}}</td>
+                        <td>{{item.dateTaken}}</td>
+                        <td>{{item.dateUploaded}}</td>
+                        <td>{{item.courseName}}</td>
+                        <td>{{item.uploader}}</td>
+                        <td>{{item.fileType}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 </div>
 </script>
 

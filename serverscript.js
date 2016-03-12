@@ -1,3 +1,16 @@
+// Retreive data from the database
+function getData(coursename) {
+    //var select ='SELECT * FROM notes ';
+    //var courseName = coursename.concat(' ');
+    //var ordering = 'ORDER BY rating DESC';
+    var queryResult = db.Execute('SELECT * FROM notes ORDER BY rating DESC');
+    var rows = JSON.parse(queryResult);
+    if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
+        return '{"status":"noTable"}';
+    }
+    return queryResult;
+}
+
 // this creates the table for the notes
 function createTable() {
     var result = {};
