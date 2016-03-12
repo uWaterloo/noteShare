@@ -1,16 +1,4 @@
 <script type="text/ng-template" id="main.html"> 
-        <widget-row>
-            <widget-cell class="main">
-                
-            </widget-cell>
-        </widget-row>
-    	<widget-row>
-            <widget-cell>
-                <button class="btn" ng-click="showPreview()">
-                    Load Preview
-                </button>
-            </widget-cell>
-        </widget-row>
         <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
                     <button class="btn" ng-click="showCourseNotes(item.subject_code, item.catalog)">
@@ -21,25 +9,18 @@
         
 </script>
 
-<!-- Preview View --> 
-<script type="text/ng-template" id="preview.html">
-    <widget-row>
-        <widget-cell>
-            <h2> Preview Page </h2>
-        </widget-cell>
-    </widget-row>
+
+        
+<!-- Notes View -->
+<script type="text/ng-template" id="notes.html">
     <widget-row>
         <widget-cell>
             <input id="fileToUpload" name="fileToUpload" type="file" />
             <a href="#" type="button" class="btn" onclick="launchOneDriveSaver()">Upload File</a>
             <a href="#" type="button" class="btn" onclick="function()">Download File</a>
-        </widget-cell>
+    	</widget-cell>
     </widget-row>
-</script>
-        
-<!-- Notes View -->
-<script type="text/ng-template" id="notes.html">
-     <widget-row>
+    <widget-row>
         <widget-cell>
             <h2> {{ item.courseName }} - Notes Page </h2>
         </widget-cell>
