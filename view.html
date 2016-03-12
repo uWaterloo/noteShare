@@ -19,7 +19,7 @@ function launchOneDriveSaver(){
         </widget-row>
         <widget-row ng-repeat= "item in userCourses">
                 <widget-cell>
-                    <button class="btn btn-default" ng-click="showCourseNotes('CS241')">
+                    <button class="btn btn-default" ng-click="showCourseNotes(item.subject_code, item.catalog)">
                         {{ item.subject_code }} {{ item.catalog }}
                     </button>
                 </widget-cell>
